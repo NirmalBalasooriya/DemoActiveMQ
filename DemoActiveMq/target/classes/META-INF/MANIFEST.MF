@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1481268498055
+Build-Jdk: 1.8.0_111
+Built-By: nirma
+Bundle-Description: Empty Camel Spring Example
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: Empty Camel Spring Example [DemoActiveMq]
+Bundle-SymbolicName: DemoActiveMq
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Import-Package: org.apache.activemq.camel.component
+Tool: Bnd-1.50.0

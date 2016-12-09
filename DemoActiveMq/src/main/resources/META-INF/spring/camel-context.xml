@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    <camelContext id="_camelContext1" xmlns="http://camel.apache.org/schema/spring">
+        <route id="amq_test">
+            <from id="_from1" uri="activemq:queue:DemoQueue"/>
+            <log id="_log1" message="${body}"/>
+            <log id="_log2" message="Finished"/>
+        </route>
+        <route id="_route1">
+            <from id="_from2" uri="file:///c:/work/activemq"/>
+            <to id="_to1" uri="activemq:queue:DemoQueue"/>
+        </route>
+    </camelContext>
+    <bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+        <property name="brokerURL" value="tcp://DESKTOP-3KNHDOV:61617"/>
+        <property name="userName" value="admin"/>
+        <property name="password" value="admin"/>
+    </bean>
+</beans>
